@@ -16,5 +16,9 @@ namespace You.Models
         [DisplayName("Last Name")]
         [Required]
         public virtual string Lastname { get; set; }
+
+        [DisplayName("Name of Course")]
+        [Required]
+        public virtual string Coursename { get; set; }
     }
 }
