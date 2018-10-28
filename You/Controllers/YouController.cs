@@ -9,8 +9,7 @@ namespace You.Controllers
 {
     public class YouController : Controller
     {
-
-        public ActionResult Index()
+        public ActionResult ViewBagName()
         {
             List<string> list = new List<string>
             {
@@ -24,7 +23,8 @@ namespace You.Controllers
 
             return View();
         }
-
+     
+        //GET : NameList
         public ActionResult List()
         {
             List<Name> nameList = new List<Name>
@@ -43,11 +43,5 @@ namespace You.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult Create(string Firstname, string Lastname, string Coursename)
-        {
-            return View();
         }
-        
-    }
 }
