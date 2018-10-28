@@ -29,9 +29,9 @@ namespace You.Controllers
         {
             List<Name> nameList = new List<Name>
             {
-                new Name() { FirstName = "Erick", Lastname = "Cruz" },
-                new Name() { FirstName = "Robert", Lastname = "Brad" },
-                new Name() { FirstName = "Vlad", Lastname = "King" }
+                new Name() { FirstName = "Erick", Lastname = "Cruz" , Coursename = "Calculus"},
+                new Name() { FirstName = "Robert", Lastname = "Brad", Coursename = "English"},
+                new Name() { FirstName = "Vlad", Lastname = "King" , Coursename = "Science"}
             };
 
             ViewBag.Message = "Strong typing here";
@@ -43,5 +43,11 @@ namespace You.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Create(string Firstname, string Lastname, string Coursename)
+        {
+            return View();
+        }
+        
     }
 }
