@@ -3,87 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using You.Models;
 
 namespace You.Controllers
 {
     public class YouController : Controller
     {
-        // GET: You
+
         public ActionResult Index()
         {
+            List<string> list = new List<string>
+            {
+                "Erick",
+                "Robert",
+                "Vlad"
+            };
+
+            ViewBag.Message = "My test view";
+            ViewBag.Names = list;
+
             return View();
         }
 
-        // GET: You/Details/5
-        public ActionResult Details(int id)
+        public ActionResult List()
         {
-            return View();
+            List<Name> nameList = new List<Name>
+            {
+                new Name() { FirstName = "Erick", Lastname = "Cruz" },
+                new Name() { FirstName = "Robert", Lastname = "Brad" },
+                new Name() { FirstName = "Vlad", Lastname = "King" }
+            };
+
+            ViewBag.Message = "Strong typing here";
+
+            return View(nameList);
         }
 
-        // GET: You/Create
         public ActionResult Create()
         {
             return View();
-        }
-
-        // POST: You/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: You/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: You/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: You/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: You/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

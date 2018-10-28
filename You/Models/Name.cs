@@ -9,15 +9,12 @@ namespace You.Models
 {
     public class Name
     {
-
-        public virtual int PersonId { get; set; }
-
         [DisplayName("First Name")]
-            [Required]
-            public virtual string FirstName { get; set; }
+        [Required]
+        public virtual string FirstName { get; set; }
 
-            [DisplayName("Last Name")]
-            [Required]
-            public virtual string Lastname { get; set; }
+        [DisplayName("Last Name")]
+        [Required]
+        public virtual string Lastname { get; set; }
     }
 }
